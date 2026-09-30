@@ -55,3 +55,17 @@ class ImpostoVisitor implements Visitor {
         System.out.println("Imposto do Eletrônico: R$ " + imposto);
     }
 }
+
+// MAIN
+public class Main {
+    public static void main(String[] args) {
+
+        Livro livro = new Livro(100);
+        Eletronico eletronico = new Eletronico(1000);
+
+        Visitor imposto = new ImpostoVisitor();
+
+        livro.accept(imposto);
+        eletronico.accept(imposto);
+    }
+}
